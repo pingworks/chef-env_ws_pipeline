@@ -1,3 +1,4 @@
+default['chef-dash']['platform'] = 'ubuntu-lts'
 default['chef-dash']['package']['version'] = '442+git4c1d13d'
 
 default['chef-dash']['frontend']['toolbar']['links'] = "{
