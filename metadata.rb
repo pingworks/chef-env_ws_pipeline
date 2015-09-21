@@ -1,0 +1,12 @@
+name             'ws-env-pipeline'
+maintainer       'Christoph Lukas'
+maintainer_email 'christoph.lukas@gmx.net'
+license          'All rights reserved'
+description      'Environment cookbook for a basic pipeline'
+long_description 'Environment cookbook for a basic pipeline'
+version          '0.1.0'
+
+depends 'ws-base'
+depends 'ws-jenkins'
+depends 'chef-dash'
+depends 'ws-git-repo'
