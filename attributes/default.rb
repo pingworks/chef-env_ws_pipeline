@@ -1,5 +1,5 @@
 default['chef-dash']['platform'] = 'ubuntu-lts'
-default['chef-dash']['package']['version'] = '442+git4c1d13d'
+default['chef-dash']['package']['version'] = '444+git520aaf9'
 
 default['chef-dash']['frontend']['toolbar']['links'] = "{
                 id: 'JenkinsButton',
@@ -28,3 +28,10 @@ default['chef-dash']['frontend']['toolbar']['links'] = "{
 
 default['chef-dash']['frontend']['bundlegrid']['vcslink'] = "<a href=\"http://git.#{node['ws-base']['domain']}/gitweb/?p={0};a=commit;h={1}\" target=\"_blank\" style=\"color: black\">{1}</a>"
 default['chef-dash']['frontend']['bundlegrid']['vcsrepolink'] = "<a href=\"http://git.#{node['ws-base']['domain']}/gitweb/\" target=\"_blank\" style=\"color: black\">{0}</a>"
+
+default['chef-dash']['repo']['ownerhome'] = '/var/lib/jenkins'
+default['chef-dash']['repo']['owner'] = 'jenkins'
+default['chef-dash']['repo']['group'] = 'jenkins'
+
+default['chef-dash']['scripts']['impl'] = 'ssh'
+default['chef-dash']['scripts']['sshlogin'] = 'jenkins@dash'
