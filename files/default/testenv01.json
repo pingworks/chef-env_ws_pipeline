@@ -1,0 +1,14 @@
+{
+    "id" : "testenv01",
+    "name" : "Testumgebung 01",
+    "domainname" : "test01.ws.pingworks.net",
+    "locked" : false,
+    "by" : "",
+    "until" : "",
+    "bundle" : "",
+    "deployable" : true,
+    "urls": [{
+        "name": "Phonebook",
+        "url": "http://pb.test01.ws.pingworks.net"
+    }]
+}

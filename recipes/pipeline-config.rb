@@ -20,3 +20,16 @@ bash 'extract jenkins-config' do
   code 'tar xvz -f /tmp/jenkins-config.tar.gz -C /var/lib/jenkins'
   notifies :restart, 'service[jenkins]', :immediately
 end
+
+directory '/data/envs' do
+  owner 'jenkins'
+  group 'www-data'
+  mode '775'
+end
+
+cookbook_file 'testenv01.json' do
+  path '/data/envs/testenv01.json'
+  owner 'jenkins'
+  group 'www-data'
+  mode '775'
+end

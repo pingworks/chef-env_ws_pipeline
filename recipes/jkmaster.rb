@@ -8,4 +8,4 @@ include_recipe 'chef-dash::dash-scripts'
 include_recipe 'ws-phonebook::build'
 
 include_recipe 'ws-env-pipeline::ssh-auth'
-include_recipe 'ws-env-pipeline::jenkins-config'
+include_recipe 'ws-env-pipeline::pipeline-config'
