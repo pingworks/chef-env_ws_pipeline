@@ -1,7 +1,7 @@
 {
-    "id" : "testenv01",
+    "id" : "test01",
     "name" : "Testumgebung 01",
-    "domainname" : "test01.ws.pingworks.net",
+    "domainname" : "test01.<%= node['ws-base']['domain'] %>",
     "locked" : false,
     "by" : "",
     "until" : "",
@@ -9,6 +9,6 @@
     "deployable" : true,
     "urls": [{
         "name": "Phonebook",
-        "url": "http://pb.test01.ws.pingworks.net"
+        "url": "http://frontend.test01.<%= node['ws-base']['domain'] %>:9292"
     }]
 }

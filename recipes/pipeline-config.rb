@@ -27,8 +27,8 @@ directory '/data/envs' do
   mode '775'
 end
 
-cookbook_file 'testenv01.json' do
-  path '/data/envs/testenv01.json'
+template '/data/envs/test01.json' do
+  source 'testenv.json.erb'
   owner 'jenkins'
   group 'www-data'
   mode '775'
