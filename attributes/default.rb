@@ -45,3 +45,8 @@ default['chef-dash']['repo']['group'] = 'jenkins'
 
 default['chef-dash']['scripts']['impl'] = 'ssh'
 default['chef-dash']['scripts']['sshlogin'] = 'jenkins@dash'
+
+default['chef-dash']['regex']['env'] = '^test[0-9][0-9]\$'
+
+default['ws-base']['ssh-user-sudo'] = 'jenkins	ALL = NOPASSWD: /usr/bin/dpkg -i phonebook*
+jenkins	ALL = (gitdaemon) NOPASSWD: /usr/bin/git fetch origin master\:master'
