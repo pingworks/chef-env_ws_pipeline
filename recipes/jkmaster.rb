@@ -7,5 +7,5 @@ include_recipe 'chef-dash::repo'
 include_recipe 'chef-dash::dash-scripts'
 include_recipe 'ws-phonebook::build'
 
-include_recipe 'ws-env-pipeline::ssh-auth'
+include_recipe 'ws-base::ssh-user'
 include_recipe 'ws-env-pipeline::pipeline-config'
