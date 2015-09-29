@@ -10,8 +10,23 @@ cookbook_file 'jenkins-config.tar.gz' do
   mode '644'
 end
 
+cookbook_file 'jenkins-pw-config.tar.gz' do
+  path '/tmp/jenkins-pw-config.tar.gz'
+  owner 'root'
+  group 'root'
+  mode '644'
+end
+
 bash 'cleanup jenkins-config' do
   code 'rm -rf /var/lib/jenkins/*.xml /var/lib/jenkins/jobs'
+end
+
+if node['ws-base']['os_user'] == 'pingworks' then
+  bash 'extract pingworks-config' do
+    user 'jenkins'
+    group 'jenkins'
+    code 'tar xvz -f /tmp/jenkins-pw-config.tar.gz -C /var/lib/jenkins'
+  end
 end
 
 bash 'extract jenkins-config' do
