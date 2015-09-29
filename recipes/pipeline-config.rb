@@ -21,6 +21,12 @@ bash 'cleanup jenkins-config' do
   code 'rm -rf /var/lib/jenkins/*.xml /var/lib/jenkins/jobs'
 end
 
+bash 'extract jenkins-config' do
+  user 'jenkins'
+  group 'jenkins'
+  code 'tar xvz -f /tmp/jenkins-config.tar.gz -C /var/lib/jenkins'
+end
+
 if node['ws-base']['os_user'] == 'pingworks' then
   bash 'extract pingworks-config' do
     user 'jenkins'
@@ -29,10 +35,10 @@ if node['ws-base']['os_user'] == 'pingworks' then
   end
 end
 
-bash 'extract jenkins-config' do
+bash 'restart jenkins' do
   user 'jenkins'
   group 'jenkins'
-  code 'tar xvz -f /tmp/jenkins-config.tar.gz -C /var/lib/jenkins'
+  code 'echo "foo"'
   notifies :restart, 'service[jenkins]', :immediately
 end
 
