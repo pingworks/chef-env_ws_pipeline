@@ -27,7 +27,7 @@ bash 'extract jenkins-config' do
   code 'tar xvz -f /tmp/jenkins-config.tar.gz -C /var/lib/jenkins'
 end
 
-if node['ws-base']['os_user'] == 'pingworks' then
+if node['pw_base']['os_user'] == 'pingworks' && node['pw_base']['os_domain'].split('.')[0] == 'prod' then
   bash 'extract pingworks-config' do
     user 'jenkins'
     group 'jenkins'

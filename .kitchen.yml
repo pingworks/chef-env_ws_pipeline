@@ -3,13 +3,34 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
+  require_chef_omnibus: 12.4.1
 
 platforms:
-  - name: ubuntu-12.04
-  - name: centos-6.4
+  - name: ubuntu-14.04
+    driver:
+      box: trusty-server-cloudimg-amd64-vagrant-disk1
+      box_url: https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
 
 suites:
-  - name: default
+  - name: jkmaster
     run_list:
+      - recipe[pw_testhelper]
+      - recipe[ws-env-pipeline::jkmaster]
     attributes:
+    driver:
+      network:
+        - [ 'forwarded_port', { guest: 80, host: 1080 } ]
+        - [ 'private_network', { ip: '192.168.88.100' } ]
+  - name: jkslave
+    run_list:
+      - recipe[pw_testhelper]
+      - recipe[ws-env-pipeline::jkslave]
+    attributes:
+      pw_jenkins:
+        slave:
+          master_url: 'http://192.168.88.100:8080/jenkins'
+          name: 'jkslave'
+    driver:
+      network:
+        - [ 'private_network', { ip: '192.168.88.200' } ]

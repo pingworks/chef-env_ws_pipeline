@@ -1,7 +1,7 @@
 {
     "id" : "test01",
     "name" : "Testumgebung 01",
-    "domainname" : "test01.<%= node['ws-base']['domain'] %>",
+    "domainname" : "test01.<%= node['pw_base']['domain'] %>",
     "locked" : false,
     "by" : "",
     "until" : "",
@@ -9,6 +9,6 @@
     "deployable" : true,
     "urls": [{
         "name": "Phonebook",
-        "url": "http://frontend.test01.<%= node['ws-base']['domain'] %>:9292"
+        "url": "http://frontend.test01.<%= node['pw_base']['domain'] %>:9292"
     }]
 }

@@ -1,7 +1,12 @@
 source "https://supermarket.chef.io"
 
-cookbook 'ws-base', path: '../chef-ws-base'
-cookbook 'ws-jenkins', path: '../chef-ws-jenkins'
+cookbook 'pw_base', path: '../chef-pw_base'
+cookbook 'pw_jenkins', path: '../chef-pw_jenkins'
+cookbook 'pw_chefdk', path: '../chef-pw_chefdk'
+cookbook 'pw_openstack_clients', path: '../chef-pw_openstack_clients'
+cookbook 'pw_mofa', path: '../chef-pw_mofa'
+cookbook 'pw_cookbook_repo', path: '../chef-pw_cookbook_repo'
+cookbook 'pw_testhelper', path: '../chef-pw_testhelper'
 cookbook 'ws-git-repo', path: '../chef-ws-git-repo'
 cookbook 'ws-phonebook', path: '../chef-ws-phonebook'
 cookbook 'chef-dash', path: '../chef-dash'
