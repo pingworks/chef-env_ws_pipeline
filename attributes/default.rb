@@ -5,7 +5,7 @@ default['ws-env-pipeline']['os_url'] = 'http://10.33.0.10:5000/v2.0'
 default['ws-env-pipeline']['os_user'] = 'test'
 default['ws-env-pipeline']['os_pass'] = 'test'
 default['ws-env-pipeline']['os_keyname'] = 'test'
-default['ws-env-pipeline']['os_img'] = 'pingworks/docker-pw_baseimg:0.2'
+default['ws-env-pipeline']['os_img'] = 'pingworks/docker-ws-baseimg:0.2'
 default['ws-env-pipeline']['os_flavor'] = 'default'
 
 default['chef-dash']['platform'] = 'ubuntu-lts'
@@ -18,14 +18,19 @@ default['chef-dash']['frontend']['toolbar']['links'] = "{
                 url: '#{node['chef-dash']['jenkins']['url']}/'
             },
             {
-                id: 'RepoButton',
-                text: 'Binärrepo',
-                url: '/repo/'
-            },
-            {
                   id: 'GitButton',
                   text: 'Gitrepo',
                   url: 'http://git.#{node['pw_base']['domain']}/gitweb/'
+            },
+            {
+                  id: 'RepoButton',
+                  text: 'Binär-Repo',
+                  url: '/repo/'
+            },
+            {
+                  id: 'CookbookRepoButton',
+                  text: 'Cookbook-Repo',
+                  url: '/cookbooks/'
             },
             {
                 id: 'EnvButton',
@@ -63,6 +68,7 @@ jenkins	ALL = (gitdaemon) NOPASSWD: /usr/bin/git fetch origin master\:master'
 default['pw_base']['ssh-user'] = "#{node['ws-env-pipeline']['user']}"
 default['pw_base']['ssh-group'] = "#{node['ws-env-pipeline']['group']}"
 default['pw_base']['ssh-userhome'] = "#{node['ws-env-pipeline']['userhome']}"
+default['pw_base']['gemrc-files'] = ['/root/.gemrc', '/opt/chefdk/embedded/etc/gemrc', '/opt/chef/embedded/etc/gemrc']
 
 
 default['pw_chefdk']['kitchen']['os_url'] = "#{node['ws-env-pipeline']['os_url']}"
@@ -94,3 +100,5 @@ default['pw_openstack_clients']['os_flavor'] = "#{node['ws-env-pipeline']['os_fl
 default['pw_mofa']['user'] = "#{node['ws-env-pipeline']['user']}"
 default['pw_mofa']['group'] = "#{node['ws-env-pipeline']['group']}"
 default['pw_mofa']['userhome'] = "#{node['ws-env-pipeline']['userhome']}"
+
+default['pw_cookbook_repo']['berks-api-url'] = "http://repo.#{node['pw_base']['domain']}"
