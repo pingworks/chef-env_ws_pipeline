@@ -64,7 +64,9 @@ default['chef-dash']['scripts']['sshlogin'] = 'jenkins@dash'
 default['chef-dash']['regex']['env'] = '^test[0-9][0-9]\$'
 
 default['pw_base']['ssh-user-sudo'] = 'jenkins	ALL = NOPASSWD: /usr/bin/dpkg -i phonebook*
-jenkins	ALL = (gitdaemon) NOPASSWD: /usr/bin/git fetch origin master\:master'
+jenkins	ALL = (gitdaemon) NOPASSWD: /usr/bin/git fetch origin master\:master
+jenkins	ALL = NOPASSWD: /bin/chown
+jenkins	ALL = NOPASSWD: /bin/chmod'
 default['pw_base']['ssh-user'] = "#{node['ws-env-pipeline']['user']}"
 default['pw_base']['ssh-group'] = "#{node['ws-env-pipeline']['group']}"
 default['pw_base']['ssh-userhome'] = "#{node['ws-env-pipeline']['userhome']}"
@@ -102,3 +104,5 @@ default['pw_mofa']['group'] = "#{node['ws-env-pipeline']['group']}"
 default['pw_mofa']['userhome'] = "#{node['ws-env-pipeline']['userhome']}"
 
 default['pw_cookbook_repo']['berks-api-url'] = "http://repo.#{node['pw_base']['domain']}"
+
+default['ws-git-repo']['git-clone-baseurl'] = "git://git.#{node['pw_base']['domain']}/git"
