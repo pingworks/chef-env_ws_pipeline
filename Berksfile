@@ -8,7 +8,7 @@ cookbook 'pw_mofa', path: '../chef-pw_mofa'
 cookbook 'pw_cookbook_repo', path: '../chef-pw_cookbook_repo'
 cookbook 'pw_testhelper', path: '../chef-pw_testhelper'
 cookbook 'pw_git_repo', path: '../chef-pw_git_repo'
-cookbook 'ws-phonebook', path: '../chef-ws-phonebook'
+cookbook 'ws_phonebook', path: '../chef-ws_phonebook'
 cookbook 'chef-dash', path: '../chef-dash'
 
 metadata
