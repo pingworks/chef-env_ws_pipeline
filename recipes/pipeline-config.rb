@@ -27,7 +27,7 @@ bash 'extract jenkins-config' do
   code 'tar xvz -f /tmp/jenkins-config.tar.gz -C /var/lib/jenkins'
 end
 
-if node['ws-env-pipeline']['os_user'] == 'pingworks' && node['pw_base']['domain'].split('.')[0] == 'prod' then
+if node['env_ws_pipeline']['os_user'] == 'pingworks' && node['pw_base']['domain'].split('.')[0] == 'prod' then
   bash 'cleanup pw jenkins-config' do
     code 'rm -rf /var/lib/jenkins/jobs/tpl-*'
   end

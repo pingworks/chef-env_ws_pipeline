@@ -1,4 +1,4 @@
-# ws-env-pipeline-cookbook
+# env_ws_pipeline-cookbook
 
 Environment cookbook for a basic pipeline
 
@@ -16,7 +16,7 @@ Ubuntu 14.04
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['ws-env-pipeline']['bacon']</tt></td>
+    <td><tt>['env_ws_pipeline']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
@@ -25,14 +25,14 @@ Ubuntu 14.04
 
 ## Usage
 
-### ws-env-pipeline::default
+### env_ws_pipeline::default
 
-Include `ws-env-pipeline` in your node's `run_list`:
+Include `env_ws_pipeline` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[ws-env-pipeline::default]"
+    "recipe[env_ws_pipeline::default]"
   ]
 }
 ```

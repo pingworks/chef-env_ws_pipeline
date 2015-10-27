@@ -1,3 +1,3 @@
 # 0.1.0
 
-Initial release of ws-env-pipeline
+Initial release of env_ws_pipeline

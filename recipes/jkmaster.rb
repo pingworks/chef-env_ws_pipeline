@@ -8,7 +8,7 @@ include_recipe 'chef-dash::dash-scripts'
 include_recipe 'ws_phonebook::build'
 
 include_recipe 'pw_base::ssh-user'
-include_recipe 'ws-env-pipeline::pipeline-config'
+include_recipe 'env_ws_pipeline::pipeline-config'
 
 include_recipe 'pw_chefdk::chefdk'
 include_recipe 'pw_chefdk::kitchen_openstack'
