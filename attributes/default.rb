@@ -105,4 +105,4 @@ default['pw_mofa']['userhome'] = "#{node['ws-env-pipeline']['userhome']}"
 
 default['pw_cookbook_repo']['berks-api-url'] = "http://repo.#{node['pw_base']['domain']}"
 
-default['ws-git-repo']['git-clone-baseurl'] = "git://git.#{node['pw_base']['domain']}/git"
+default['pw_git_repo']['git-clone-baseurl'] = "git://git.#{node['pw_base']['domain']}/git"

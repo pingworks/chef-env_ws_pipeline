@@ -1,7 +1,7 @@
 
 include_recipe 'pw_base'
 include_recipe 'pw_jenkins::master'
-include_recipe 'ws-git-repo'
+include_recipe 'pw_git_repo'
 include_recipe 'chef-dash::dash-prod'
 include_recipe 'chef-dash::repo'
 include_recipe 'chef-dash::dash-scripts'
