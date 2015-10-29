@@ -10,8 +10,8 @@ cookbook_file 'jenkins-config.tar.gz' do
   mode '644'
 end
 
-cookbook_file 'jenkins-pw-config.tar.gz' do
-  path '/tmp/jenkins-pw-config.tar.gz'
+cookbook_file 'jenkins-demo-config.tar.gz' do
+  path '/tmp/jenkins-demo-config.tar.gz'
   owner 'root'
   group 'root'
   mode '644'
@@ -27,14 +27,14 @@ bash 'extract jenkins-config' do
   code 'tar xvz -f /tmp/jenkins-config.tar.gz -C /var/lib/jenkins'
 end
 
-if node['env_ws_pipeline']['os_user'] == 'pingworks' && node['pw_base']['domain'].split('.')[0] == 'prod' then
+if node['env_ws_pipeline']['os_user'] == 'demo' then
   bash 'cleanup pw jenkins-config' do
     code 'rm -rf /var/lib/jenkins/jobs/tpl-*'
   end
   bash 'extract pingworks-config' do
     user 'jenkins'
     group 'jenkins'
-    code 'tar xvz -f /tmp/jenkins-pw-config.tar.gz -C /var/lib/jenkins'
+    code 'tar xvz -f /tmp/jenkins-demo-config.tar.gz -C /var/lib/jenkins'
   end
 end
 
