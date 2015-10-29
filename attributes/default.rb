@@ -72,7 +72,7 @@ default['pw_base']['ssh-group'] = "#{node['env_ws_pipeline']['group']}"
 default['pw_base']['ssh-userhome'] = "#{node['env_ws_pipeline']['userhome']}"
 default['pw_base']['gemrc-files'] = ['/root/.gemrc', '/opt/chefdk/embedded/etc/gemrc', '/opt/chef/embedded/etc/gemrc']
 
-
+default['pw_chefdk']['chefdk']['url'] = 'http://apt-mirror.infra.ws.net/ubuntu/other/chefdk_0.7.0-1_amd64.deb'
 default['pw_chefdk']['kitchen']['os_url'] = "#{node['env_ws_pipeline']['os_url']}"
 default['pw_chefdk']['kitchen']['os_user'] = "#{node['env_ws_pipeline']['os_user']}"
 default['pw_chefdk']['kitchen']['os_pass'] = "#{node['env_ws_pipeline']['os_pass']}"
@@ -102,6 +102,7 @@ default['pw_openstack_clients']['os_flavor'] = "#{node['env_ws_pipeline']['os_fl
 default['pw_mofa']['user'] = "#{node['env_ws_pipeline']['user']}"
 default['pw_mofa']['group'] = "#{node['env_ws_pipeline']['group']}"
 default['pw_mofa']['userhome'] = "#{node['env_ws_pipeline']['userhome']}"
+default['pw_mofa']['version'] = '0.3.4'
 
 default['pw_cookbook_repo']['berks-api-url'] = "http://repo.#{node['pw_base']['domain']}"
 
