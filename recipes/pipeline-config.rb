@@ -57,3 +57,5 @@ template '/data/envs/test01.json' do
   group 'www-data'
   mode '775'
 end
+
+package 'parallel'
