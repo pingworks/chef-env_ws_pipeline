@@ -42,6 +42,18 @@ default['chef-dash']['frontend']['toolbar']['links'] = "{
                 }
             }"
 
+default['chef-dash']['frontend']['bundlegrid']['colwidth']['branch'] = '90'
+default['chef-dash']['frontend']['bundlegrid']['colwidth']['bundle'] = '150'
+
+default['chef-dash']['frontend']['bundlegrid']['deployment']['required'] = 'null'
+default['chef-dash']['frontend']['bundlegrid']['deployment']['conditions'] = '[{
+                field: \'stage1\',
+                regex: /^3$/
+            }, {
+                field: \'pname\',
+                regex: /^phonebook/
+            }]'
+
 default['chef-dash']['frontend']['bundlegrid']['vcslink'] = "<a href=\"http://git.#{node['pw_base']['domain']}/gitweb/?p={0};a=commit;h={1}\" target=\"_blank\" style=\"color: black\">{1}</a>"
 default['chef-dash']['frontend']['bundlegrid']['vcsrepolink'] = "<a href=\"http://git.#{node['pw_base']['domain']}/gitweb/\" target=\"_blank\" style=\"color: black\">{0}</a>"
 
@@ -107,3 +119,4 @@ default['pw_mofa']['version'] = '0.3.4'
 default['pw_cookbook_repo']['berks-api-url'] = "http://repo.#{node['pw_base']['domain']}"
 
 default['pw_git_repo']['git-clone-baseurl'] = "git://git.#{node['pw_base']['domain']}/git"
+default['pw_git_repo']['cleanup'] = true
