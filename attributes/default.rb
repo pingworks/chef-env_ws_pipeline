@@ -9,7 +9,7 @@ default['env_ws_pipeline']['os_img'] = 'pingworks/docker-ws-baseimg:0.2'
 default['env_ws_pipeline']['os_flavor'] = 'default'
 
 default['chef-dash']['platform'] = 'ubuntu-lts'
-default['chef-dash']['package']['version'] = '444+git520aaf9'
+default['chef-dash']['package']['version'] = '446+gita0fb148'
 default['chef-dash']['pipelinestages'] = 2
 
 default['chef-dash']['frontend']['toolbar']['links'] = "{
@@ -54,7 +54,7 @@ default['chef-dash']['frontend']['bundlegrid']['deployment']['conditions'] = '[{
                 regex: /^phonebook/
             }]'
 
-default['chef-dash']['frontend']['bundlegrid']['vcslink'] = "<a href=\"http://git.#{node['pw_base']['domain']}/gitweb/?p={0};a=commit;h={1}\" target=\"_blank\" style=\"color: black\">{1}</a>"
+default['chef-dash']['frontend']['bundlegrid']['vcslink'] = "<a href=\"http://git.#{node['pw_base']['domain']}/gitweb/?p={0};a=commitdiff;h={1}\" target=\"_blank\" style=\"color: black\">{1}</a>"
 default['chef-dash']['frontend']['bundlegrid']['vcsrepolink'] = "<a href=\"http://git.#{node['pw_base']['domain']}/gitweb/\" target=\"_blank\" style=\"color: black\">{0}</a>"
 
 default['chef-dash']['frontend']['bundlegrid']['flex']['deployment'] = '1'
@@ -65,6 +65,8 @@ default['chef-dash']['frontend']['bundlegrid']['hidden']['triggerJenkinsJob'] = 
 
 default['chef-dash']['frontend']['deployment']['triggerUrl'] = "#{node['chef-dash']['jenkins']['url']}/job/deployment/buildWithParameters?token=Omi7foh4gu7d"
 default['chef-dash']['frontend']['deployment']['showUrl'] = "#{node['chef-dash']['jenkins']['url']}/job/deployment/"
+
+default['chef-dash']['frontend']['jobresult']['text'] = "<div style=\"white-space: nowrap;\"><img src=\"{6}\" alt=\"{2}\" class=\"{7}\">&nbsp;<a href=\"{1}\" target=\"_blank\">{0}</a>: Tests: {3}, skipped: {4}, failed: {5}</div>"
 
 default['chef-dash']['repo']['ownerhome'] = '/var/lib/jenkins'
 default['chef-dash']['repo']['owner'] = 'jenkins'

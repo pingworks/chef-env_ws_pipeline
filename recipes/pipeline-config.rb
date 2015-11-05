@@ -38,6 +38,13 @@ if node['env_ws_pipeline']['os_user'] == 'demo' then
   end
 end
 
+bash 'configure jenkins url' do
+  user 'jenkins'
+  group 'jenkins'
+  cwd '/var/lib/jenkins'
+  code "sed -i -e 's;<jenkinsUrl>.*</jenkinsUrl>;<jenkinsUrl>http://jkmaster.#{node['pw_base']['domain']}/jenkins/</jenkinsUrl>;' jenkins.model.JenkinsLocationConfiguration.xml"
+end
+
 bash 'restart jenkins' do
   user 'jenkins'
   group 'jenkins'
