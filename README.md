@@ -41,12 +41,12 @@ After the master is up and running, logon to the master and check it's IP.
 kitchen login jkmaster
 ip a l dev eth0
 ```
-Change the master_url in .kitchen.yml to http://<master-ip>:8080/jenkins and
+Change the master_url in .kitchen.yml to http://\<master-ip\>:8080/jenkins and
 setup the slave:
 ```
 kitchen converge jkslave
 ```
-You should new be able to reach the dashboard at http://<master-ip>/
+You should new be able to reach the dashboard at http://\<master-ip\>/
 
 
 ## License and Authors
