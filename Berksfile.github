@@ -1,0 +1,14 @@
+source "https://supermarket.chef.io"
+
+cookbook 'pw_base', git: 'https://github.com/pingworks/chef-pw_base'
+cookbook 'pw_jenkins', git: 'https://github.com/pingworks/chef-pw_jenkins'
+cookbook 'pw_chefdk', git: 'https://github.com/pingworks/chef-pw_chefdk'
+cookbook 'pw_openstack_clients', git: 'https://github.com/pingworks/chef-pw_openstack_clients'
+cookbook 'pw_mofa', git: 'https://github.com/pingworks/chef-pw_mofa'
+cookbook 'pw_cookbook_repo', git: 'https://github.com/pingworks/chef-pw_cookbook_repo'
+cookbook 'pw_testhelper', git: 'https://github.com/pingworks/chef-pw_testhelper'
+cookbook 'pw_git_repo', git: 'https://github.com/pingworks/chef-pw_git_repo'
+cookbook 'ws_phonebook', git: 'https://github.com/pingworks/chef-ws_phonebook'
+cookbook 'chef-dash', git: 'https://github.com/pingworks/chef-dash'
+
+metadata
