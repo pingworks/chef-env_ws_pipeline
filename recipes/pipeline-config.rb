@@ -1,6 +1,6 @@
 service 'jenkins' do
   supports status: true, restart: true, reload: true
-  action  [:enable]
+  action [:enable]
 end
 
 cookbook_file 'jenkins-config.tar.gz' do
@@ -27,7 +27,7 @@ bash 'extract jenkins-config' do
   code 'tar xvz -f /tmp/jenkins-config.tar.gz -C /var/lib/jenkins'
 end
 
-if node['env_ws_pipeline']['os_user'] == 'demo' then
+if node['env_ws_pipeline']['os_user'] == 'demo' || node['env_ws_pipeline']['jenkins-config'] == 'demo' then
   bash 'cleanup pw jenkins-config' do
     code 'rm -rf /var/lib/jenkins/jobs/tpl-*'
   end

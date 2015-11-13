@@ -7,6 +7,7 @@ default['env_ws_pipeline']['os_pass'] = 'test'
 default['env_ws_pipeline']['os_keyname'] = 'test'
 default['env_ws_pipeline']['os_img'] = 'pingworks/docker-ws-baseimg:0.2'
 default['env_ws_pipeline']['os_flavor'] = 'default'
+default['env_ws_pipeline']['jenkins-config'] = 'base'
 
 default['chef-dash']['platform'] = 'ubuntu-lts'
 default['chef-dash']['package']['version'] = '446+gita0fb148'
