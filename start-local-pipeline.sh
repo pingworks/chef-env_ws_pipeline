@@ -31,7 +31,6 @@ echo "####################################################"
 echo "# Setting up name resolution to work without dns   #"
 echo "#                                                  #"
 echo "####################################################"
-sleep 5
 ip=$(get_docker_ip jkmaster)
 lines="$(grep -vE 'jkmaster|jkslave|dash|git|repo' /etc/hosts)"
 for name in jkmaster dash git repo; do
