@@ -14,6 +14,8 @@ function get_docker_ip {
 
 set -e
 
+sudo apt-get install -y jq
+
 echo "####################################################"
 echo "# Creating Pipeline Environment                    #"
 echo "#                                                  #"
