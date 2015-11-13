@@ -31,18 +31,17 @@ echo "####################################################"
 echo "# Setting up name resolution to work without dns   #"
 echo "#                                                  #"
 echo "####################################################"
-ip=$(get_docker_ip jkmaster)
+master_ip=$(get_docker_ip jkmaster)
 lines="$(grep -vE 'jkmaster|jkslave|dash|git|repo' /etc/hosts)"
 for name in jkmaster dash git repo; do
-  lines="${lines}\n$ip $name.$domain $name"
+  lines="${lines}\n$master_ip $name.$domain $name"
 done
-ip=$(get_docker_ip jkslave)
-lines="${lines}\n$ip jkslave.$domain jkslave"
+slave_ip=$(get_docker_ip jkslave)
+lines="${lines}\n$slave_ip jkslave.$domain jkslave"
 echo -e "$lines" | sudo tee /etc/hosts >/dev/null
 
 for name in jkmaster jkslave; do
-  kitchen login $name <<< "
-    sed -e 's;^\(.*jkmaster\)$;\1 git repo dash;' /etc/hosts > /tmp/hosts.new
-    cat /tmp/hosts.new | sudo tee /etc/hosts >/dev/null
-  "
+  docker exec -ti $name /bin/bash -c "\
+    sed -e 's;^\(.*jkmaster\).*$;$master_ip jkmaster.local jkmaster git repo dash;' /etc/hosts > /tmp/hosts.new; \
+    cat /tmp/hosts.new | sudo tee /etc/hosts >/dev/null"
 done
