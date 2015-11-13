@@ -4,7 +4,7 @@ maintainer_email 'christoph.lukas@gmx.net'
 license          'All rights reserved'
 description      'Environment cookbook for a basic pipeline'
 long_description 'Environment cookbook for a basic pipeline'
-version          '0.2.0'
+version          '0.2.1'
 
 depends 'pw_base', '=0.2.0'
 depends 'pw_jenkins', '=0.2.1'
