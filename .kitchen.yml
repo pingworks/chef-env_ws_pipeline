@@ -9,6 +9,10 @@ platforms:
   - name: ubuntu-14.04
     driver_config:
       image: pingworks/docker-ws-baseimg:0.2
+      # revert the STEP1 changes from kitchen docker
+      provision_command: rm /sbin/initctl; dpkg-divert --local --rename --remove /sbin/initctl
+      # and run init instead of sshd
+      run_command: /sbin/init
 
 suites:
   - name: jkmaster
