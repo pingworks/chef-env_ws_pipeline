@@ -28,7 +28,15 @@ make the pipeline machines accessible from your host.
 After the script has finished you should be able to reach the dashboard at
 http://dash.local/
 
-## 3) Limitations
+### 3) Restarting the pipeline after a reboot
+After you have rebooted your system you also need to restart the pipeline
+containers. This can be done with:
+```
+cd chef-env_ws_pipeline
+./start-local-pipeline.sh
+```
+
+## 4) Limitations
 The continuous delivery pipeline for the phonebook should be fully up and
 working.
 The cookbook pipeline will fail in the acceptance test stage because it tries
