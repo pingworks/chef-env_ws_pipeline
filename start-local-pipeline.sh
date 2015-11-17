@@ -45,3 +45,10 @@ for name in jkmaster jkslave; do
     sed -e 's;^\(.*jkmaster\).*$;$master_ip jkmaster.local jkmaster git repo dash;' /etc/hosts > /tmp/hosts.new; \
     cat /tmp/hosts.new | sudo tee /etc/hosts >/dev/null"
 done
+
+echo
+echo
+echo "####################################################"
+echo "# Your local pipeline environment should now be    #"
+echo "# available at: http://dash.local                  #"
+echo "####################################################"
