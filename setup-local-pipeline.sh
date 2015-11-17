@@ -2,7 +2,7 @@
 
 set -e
 
-sudo apt-get install -y jq
+ dpkg -l jq >/dev/null || sudo apt-get install -y jq
 
 echo "####################################################"
 echo "# Creating Pipeline Environment                    #"
